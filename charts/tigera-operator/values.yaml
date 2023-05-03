@@ -43,6 +43,7 @@ tigeraOperator:
   image: tigera/operator
   version: master
   registry: quay.io
+  securityContext: {}
 calicoctl:
   image: docker.io/calico/ctl
   tag: master

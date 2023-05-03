@@ -64,6 +64,10 @@ spec:
             - configMapRef:
                 name: kubernetes-services-endpoint
                 optional: true
+          {{- with .Values.tigeraOperator.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12}}
+          {{- end}}
       volumes:
         - name: var-lib-calico
           hostPath:
